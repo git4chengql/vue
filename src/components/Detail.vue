@@ -35,14 +35,14 @@ export default {
   },
   methods:{
     fetchCustomers(id){
-      this.$http.get("http://localhost:3000/users/"+id)
+      this.$http.get("http://dept-8001.com:3000/users/"+id)
                   .then(function(res){
                       this.customer = res.body;
                   })
     },
     //deleteCustomer
     deleteCustomer(customerId){
-      this.$http.delete("http://localhost:3000/users/"+customerId)
+      this.$http.delete("http://dept-8001.com:3000/users/"+customerId)
                   .then(function(res){
                       this.$router.push({path:'/',query:{alert:"删除成功"}});
                   })

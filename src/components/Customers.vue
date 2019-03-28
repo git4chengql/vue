@@ -39,7 +39,7 @@ export default {
   },
   methods:{
     fetchCustomers(){
-      this.$http.get("http://localhost:3000/users")
+      this.$http.get("http://dept-8001.com:3000/users")
                   .then(function(res){
                       this.customers = res.body;
                   })

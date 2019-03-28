@@ -4,23 +4,29 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import VueRosource from 'vue-resource'
+import 'vx-easyui/dist/themes/gray/easyui.css';
+import 'vx-easyui/dist/themes/icon.css';
+import 'vx-easyui/dist/themes/vue.css';
+import EasyUI from 'vx-easyui';
 import Customers from './components/Customers'
 import About from './components/About'
 import Add from './components/Add.vue'
 import Details from './components/Detail.vue'
+import Ve from './components/VE.vue'
+
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 Vue.use(VueRosource)
-
+Vue.use(EasyUI);
 //设置路由
 const router = new VueRouter({
 	mode:"history",
 	base:__dirname,
 	routes:[
 		{path:"/",component:Customers},
-		//{path:"/index",component:Customers},
+		{path:"/ve",component:Ve},
 		{path:"/about",component:About},
 		{path:"/add",component:Add},
 		{path:"/user/:id",component:Details}
@@ -45,6 +51,7 @@ new Vue({
 										<ul class="nav navbar-nav">
 										 <li><router-link :to="{path:'/'}">首页</router-link></li>
 										 <li><router-link to="/about">关于我们</router-link></li>
+										 <li><router-link to="/ve">EasyUI-VUE</router-link></li>
 										</ul>
 
 										<ul class="nav navbar-nav navbar-right">
